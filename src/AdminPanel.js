@@ -22,7 +22,7 @@ const AdminPanel = () => {
   };
 
   const blockUser = (userId) => {
-    axios.post('/api/admin/block', { userId })
+    axios.post('/api/admin/block', { id: userId })
       .then(response => setUsers(users.map(user => user.id === userId ? { ...user, blocked: true } : user)))
       .catch(error => console.error(error));
   };
